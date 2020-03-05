@@ -40,7 +40,6 @@ namespace Pineapple
 
 /*addComputer() - добавить компьютер, с автоматическим идентификационным номером.
 addComputer(Int ID) - добавляет компьютер со следующими данными: идентификационный номер компьютера.
-attachPeripheryToComputer(int ID,periphery[] _periphery ) - прикрепляет периферию к компьютеру по ID.
 attachToEmployee(int ID, int employeeId ) - прикрепляет компьютер к сотруднику.
 editPeriphery(int ID, int PeripheryId, periphery _periphery ) - изменяет данные о периферии, прикрепленной к компьтеру по идентификационному номеру.
 editComputer(int ID, int computerSetting, String setting) - изменяет описание характеристики компьютера по ID.  
