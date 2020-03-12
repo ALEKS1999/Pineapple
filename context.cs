@@ -16,6 +16,6 @@ namespace Pineapple
         // Entities        
         public DbSet<Computer> Computers { get; set; }
         public DbSet<Periphery> Periphery { get; set; }
-        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Employee> Employee { get; set; }
     }
 }
