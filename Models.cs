@@ -78,7 +78,8 @@ editCondition(int ID, String condition) - изменяет состояние к
        {
            condition = "fired";
        }
-       public string fullName {
+       public string fullName 
+       {
            get 
            {
                return info[0];
@@ -99,9 +100,39 @@ editCondition(int ID, String condition) - изменяет состояние к
                info[1] = Convert.ToString(yearOfBirth);
            }
        }
-       public string title { get; set; }
-       public string department { get; set; }
-       public int employeeID { get; set; }
+       public string title
+       {
+           get
+           {
+               return info[2];
+           }
+           set
+           {
+               info[2] = title;
+           }
+       }
+       public string department
+       {
+           get
+           {
+               return info[3];
+           }
+           set
+           {
+               info[3] = department;
+           }
+       }
+       public int employeeID
+       {
+           get
+           {
+               return Convert.ToInt32(info[4]);
+           }
+           set
+           {
+               info[4] = Convert.ToString(employeeID);
+           }
+       }
    }
 }
 /*
