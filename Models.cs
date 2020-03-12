@@ -7,23 +7,22 @@ using System.Threading.Tasks;
 
 namespace Pineapple
 {
-<<<<<<< HEAD
     public class Computer {
-        public int LastID = 1;
-        public int CompID = 0;
-        public string[] setting = new string[21];
-        public string[] condition = new string[1];
-        public Computer () {
-            CompID = LastID;
-            LastID++;
-        }
-        public Computer (int CompID) {
-            LastID++;
+    public int LastID = 1;
+    public int CompID = 0;
+    public string[] setting = new string[21];
+    public string[] condition = new string[1];
+    public Computer () {
+        CompID = LastID;
+        LastID++;
+    }
+    public Computer (int CompID) {
+        LastID++;
         }
 
-        public attachComputertoEmployee () {
+        public void attachComputertoEmployee () {
         }
-        public deattachPeriphery () {
+        public void deattachPeriphery () {
         }
 
         public string editComputerInfo(int ID, string newSetting, int settingID) {
@@ -37,7 +36,7 @@ namespace Pineapple
        }
 
     }
-}
+
 
 /*addComputer() - добавить компьютер, с автоматическим идентификационным номером.
 addComputer(Int ID) - добавляет компьютер со следующими данными: идентификационный номер компьютера.
@@ -46,7 +45,6 @@ editPeriphery(int ID, int PeripheryId, periphery _periphery ) - изменяет
 editComputer(int ID, int computerSetting, String setting) - изменяет описание характеристики компьютера по ID.  
 editCondition(int ID, String condition) - изменяет состояние компьютера.
 */
-=======
    public class Employee
    {
        int computerID=-1;
@@ -61,31 +59,46 @@ editCondition(int ID, String condition) - изменяет состояние к
        {
            info[4] = Convert.ToString(ID);
        }
-       public string attachComputer(int ID)
+       public void attachComputer(int ID)
        {
            computerID=ID;
-           return "Computer with ID=" + computerID + " was attached to this employee";
        }
-       public string deattachComputer()
+       public void deattachComputer()
        {
            computerID = -1;
-           return "Employee was deattached";
        }
-       public string editEmployeeInfo(int ID, string newInfo, int infoID)
+       public void editEmployeeInfo(int ID, string newInfo, int infoID)
        {
-           if (infoID < 0 || infoID >= 5) return "Wrong input";
-           else
+           if (infoID >= 1 || infoID <= 5)
            {
-               // для каждого свой отдельный 
-               // напиши switch()
+               info[infoID] = newInfo;
            }
        }
        public void deleteEmployee()
        {
            condition = "fired";
        }
-       public string fullName { get; set; }
-       public int yearOfBirth { get; set; }
+       public string fullName {
+           get 
+           {
+               return info[0];
+           }
+           set
+           {
+               info[0] = fullName;
+           }
+       }
+       public int yearOfBirth
+       {
+           get
+           {
+               return Convert.ToInt32(info[1]);
+           }
+           set
+           {
+               info[1] = Convert.ToString(yearOfBirth);
+           }
+       }
        public string title { get; set; }
        public string department { get; set; }
        public int employeeID { get; set; }
@@ -99,4 +112,3 @@ deattachComputer(int computerID, int employeeId ) -открепляет комп
 editEmployeeInfo(int ID, String info[int InfoID]) - изменяет информацию о сотруднике.
 deleteEmployee(int ID) - меняет состояние сотрудника на "уволенный".
 */
->>>>>>> 2686fdc3327886cfc8d53f3c0b9aa1bd01dd0f6d
