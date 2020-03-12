@@ -7,23 +7,25 @@ using System.Threading.Tasks;
 
 namespace Pineapple
 {
-<<<<<<< HEAD
     public class Computer {
+
         public int LastID = 1;
         public int CompID = 0;
         public string[] setting = new string[21];
-        public string[] condition = new string[1];
+        public string[] condition = new string[21];
+
         public Computer () {
             CompID = LastID;
             LastID++;
         }
+
         public Computer (int CompID) {
             LastID++;
         }
 
-        public attachComputertoEmployee () {
-        }
-        public deattachPeriphery () {
+        public string deattachPeriphery () {
+           CompID = -1;
+           return "Periphery was deattached";
         }
 
         public string editComputerInfo(int ID, string newSetting, int settingID) {
@@ -37,7 +39,37 @@ namespace Pineapple
        }
 
     }
-}
+    public class Periphery{
+        public int LastID = 1;
+        public int PerID = 0;
+        public string[] setting = new string[21];
+        public string[] condition = new string[21];
+
+        public void addPeriphery () {
+            PerID = LastID;
+            LastID++;
+        }
+
+        public string addPeripheryID (int CompID) {
+            LastID++;
+            return "Periphery";
+        }
+
+        public string deattachPeriphery () {
+           PerID = -1;
+           return "Periphery was deattached";
+        }
+
+        public string editComputerInfo(int ID, string newSetting, int settingID) {
+           if (settingID < 0 || settingID >= 21) return "Wrong input";
+           else
+           {
+               string oldSetting = setting[settingID];
+               setting[settingID] = newSetting;
+               return "Setting was changed from " + oldSetting + " to " + newSetting;
+           }
+       }
+    }
 
 /*addComputer() - добавить компьютер, с автоматическим идентификационным номером.
 addComputer(Int ID) - добавляет компьютер со следующими данными: идентификационный номер компьютера.
@@ -46,7 +78,7 @@ editPeriphery(int ID, int PeripheryId, periphery _periphery ) - изменяет
 editComputer(int ID, int computerSetting, String setting) - изменяет описание характеристики компьютера по ID.  
 editCondition(int ID, String condition) - изменяет состояние компьютера.
 */
-=======
+
    public class Employee
    {
        int computerID=-1;
@@ -91,6 +123,7 @@ editCondition(int ID, String condition) - изменяет состояние к
        public int employeeID { get; set; }
    }
 }
+
 /*
 addEmployee() - добавляет сотрудника с автоматическим ID.
 addEmployee(int ID) - добавляет сотрудника с определенным ID.
@@ -99,4 +132,3 @@ deattachComputer(int computerID, int employeeId ) -открепляет комп
 editEmployeeInfo(int ID, String info[int InfoID]) - изменяет информацию о сотруднике.
 deleteEmployee(int ID) - меняет состояние сотрудника на "уволенный".
 */
->>>>>>> 2686fdc3327886cfc8d53f3c0b9aa1bd01dd0f6d
