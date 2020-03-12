@@ -36,7 +36,7 @@ namespace Pineapple
             CompID = LastID;
             LastID++;
         }
-
+    }
         public class Periphery
         {
             public int LastID = 1;
@@ -73,6 +73,8 @@ namespace Pineapple
                 }
             }
         }
+        
+    
 
         /*addComputer() - добавить компьютер, с автоматическим идентификационным номером.
         addComputer(Int ID) - добавляет компьютер со следующими данными: идентификационный номер компьютера.
@@ -171,7 +173,7 @@ namespace Pineapple
                 }
             }
         }
-    }
+    
 }
 
 /*
