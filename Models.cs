@@ -9,13 +9,11 @@ namespace Pineapple
 {
     public class Computer
     {
-
         public int LastID = 1;
         public int CompID = 0;
-        public string[] setting = new string[5];
-        public string[] condition = new string[3];
-        
-        /*
+        public string[] setting = new string[4];
+        public string[] condition = new string[2];
+
         public void addComputer()
         {
             CompID = LastID;
@@ -32,15 +30,24 @@ namespace Pineapple
             PerID = -1;
         }
 
-        public string editComp(int ID, string newSetting, int settingID)
+        public string editComp(string newSetting, int settingID)
         {
-            if (settingID < 0 || settingID >= 5) return "Wrong input";
+            if (settingID < 0 || settingID > 5) return "Wrong input";
             else
             {
                 string oldSetting = setting[settingID];
                 setting[settingID] = newSetting;
-                return "Setting was changed from " + oldSetting + " to " + newSetting;
             }
+        }
+
+        public void worComp()
+        {
+            condition = "working";
+        }
+
+        public void repComp()
+        {
+            condition = "on repair";
         }
 
         public void decomComp()
@@ -59,6 +66,7 @@ namespace Pineapple
                 setting[0] = cpu;
             }
         }
+
         public int ram
         {
             get
@@ -70,7 +78,8 @@ namespace Pineapple
                 setting[1] = Convert.ToString(ram);
             }
         }
-        public string mb
+
+        public string motherboard
         {
             get
             {
@@ -81,7 +90,8 @@ namespace Pineapple
                 setting[2] = mb;
             }
         }
-        public string ps
+
+        public string powersupply
         {
             get
             {
@@ -89,9 +99,10 @@ namespace Pineapple
             }
             set
             {
-                setting[3] = ps;
+                setting[3] = powersupply;
             }
         }
+
         public int hdd
         {
             get
@@ -102,47 +113,106 @@ namespace Pineapple
             {
                 setting[4] = Convert.ToString(hdd);
             }
-        }*/
+        }
     }
+
     public class Periphery
     {
         public int LastID = 1;
         public int PerID = 0;
         public string[] setting = new string[3];
-        public string[] condition = new string[3];
+        public string[] condition = new string[2];
 
-        /*public void addPeriphery()
+        public void addPeriphery()
         {
             PerID = LastID;
             LastID++;
         }
 
-        public void addPeripheryID(int CompID)
+        public void addPeripheryID(int PerID)
         {
             LastID++;
         }
 
-        public string deattachPeriphery()
+        public string deattachPeriphery(int PerID)
         {
             CompID = -1;
         }
-        public string editComp(int ID, string newSetting, int settingID)
+
+        public void worPeriphery()
         {
-            if (settingID < 0 || settingID >= 5) return "Wrong input";
+            condition = "working";
+        }
+
+        public void repPeriphery()
+        {
+            condition = "on repair";
+        }
+
+        public void decomPeriphery()
+        {
+            condition = "decommissioned";
+        }
+
+        public string editPeriphery(int PerID, string newSetting, int settingID)
+        {
+            if (settingID < 0 || settingID >= 4) return "Wrong input";
             else
             {
                 string oldSetting = setting[settingID];
                 setting[settingID] = newSetting;
-                return "Setting was changed from " + oldSetting + " to " + newSetting;
             }
         }
 
-        public void decomComp()
+        public string name
         {
-            condition = "decommissioned";
-        }*/
+            get
+            {
+                return setting[0];
+            }
+            set
+            {
+                setting[0] = name;
+            }
+        }
 
+        public int manufacturer
+        {
+            get
+            {
+                return setting[1];
+            }
+            set
+            {
+                setting[1] = manufacturer;
+            }
+        }
+
+        public string type
+        {
+            get
+            {
+                return setting[2];
+            }
+            set
+            {
+                setting[2] = type;
+            }
+        }
+
+        public string info
+        {
+            get
+            {
+                return setting[3];
+            }
+            set
+            {
+                setting[3] = info;
+            }
+        }
     }
+
     public class Employee
     {
         int computerID = -1;
