@@ -303,10 +303,5 @@ namespace Pineapple
             }
         }*/
     }
-    public class Department
-    {
-        string[] info = new string[2];
-        //info[0] = ID
-        //info[1] = Название
-    }
+
 }
