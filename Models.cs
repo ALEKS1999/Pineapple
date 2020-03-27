@@ -31,6 +31,13 @@ namespace Pineapple
         public Department Department { get; set; }
         
     }
+    public class Department 
+    {
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public ICollection<Employee> Employees { get; set; }
+    }
     public class Computer
     {
         public int LastID = 1;
