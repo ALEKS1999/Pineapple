@@ -21,7 +21,8 @@ namespace Pineapple
     {
         [Key]
         public int Id { get; set; }
-        public int FIO { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
         public string PositionID { get; set; }
         [ForeignKey("PositionID")]
         public Position Position { get; set; }
@@ -45,13 +46,13 @@ namespace Pineapple
         public int Id { get; set; }
         public string Condition { get; set; }
 
-        public string Setting { get; set; }
-        [ForeignKey("Setting")]
+        public string SettingId { get; set; }
+        [ForeignKey("SettingId")]
         public CompSetting Setting { get; set; }
 
         public int EmployeeID { get; set; }
         [ForeignKey("EmployeeID")]
-        public Employee Id { get; set; }
+        public Employee employee { get; set; }
 
     }
 
@@ -68,13 +69,13 @@ namespace Pineapple
         public int Id { get; set; }
         public string Condition { get; set; }
 
-        public string Setting { get; set; }
-        [ForeignKey("Setting")]
+        public string SettingID { get; set; }
+        [ForeignKey("SettingID")]
         public PerSetting Setting { get; set; }
 
         public int CompID { get; set; }
         [ForeignKey("CompID")]
-        public Computer Id { get; set; }
+        public Computer computer { get; set; }
     }
 
     public class PerSetting
@@ -82,12 +83,5 @@ namespace Pineapple
         public string Name { get; set; }
         public string Description { get; set; }
         public ICollection<Periphery> PeripherySetting { get; set; }
-    }
-
-    public class Department
-    {
-        string[] info = new string[2];
-        //info[0] = ID
-        //info[1] = Название
     }
 }
